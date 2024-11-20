@@ -35,19 +35,18 @@
     </div>
 
     <script type="text/javascript">
-        // Check time restriction
+        // Checking time restriction
         const now = new Date();
         const currentHour = now.getHours();
-        const startHour = 12; // 12 PM
-        const endHour = 16; // 4 PM
+        const startHour = 12; 
+        const endHour = 16;
 
         const vizContainer = document.getElementById("vizContainer");
 
         if (currentHour >= startHour && currentHour < endHour) {
             var divElement = document.getElementById('vizContainer');
             var vizElement = divElement.getElementsByTagName('object')[0];
-            // vizElement.style.width = '100%';
-            // vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            
             if (divElement.offsetWidth > 800) {
                 vizElement.style.width = '1709px';
                 vizElement.style.height = '883px';
@@ -64,8 +63,8 @@
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         } else {
             vizContainer.innerHTML = `
-                <div class="restricted-message">
-                    Access to the dashboard is only allowed between 12 PM - 4 PM.
+                <div style="text-align: center; color: red; font-weight: bold;">
+                    This Dashboard is only accessible between 12PM To 4PM.
                 </div>
             `;
         }
