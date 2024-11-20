@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Portal T2</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>This Chart is Accessible only between 12PM to 4PM </h1>
     <div class='tableauPlaceholder' id='viz1731698030275' style='position: relative'>
         <noscript>
             <a href='#'>
-                <img 
-                    alt='TASK 2' 
-                    src='https://public.tableau.com/static/images/ta/task2_17316975916460/Dashboard1/1_rss.png' 
-                    style='border: none' 
-                />
+                <img alt='TASK 2'
+                    src='https://public.tableau.com/static/images/ta/task2_17316975916460/Dashboard1/1_rss.png'
+                    style='border: none' />
             </a>
         </noscript>
         <object class='tableauViz' style='display:none;'>
@@ -24,7 +21,8 @@
             <param name='name' value='task2_17316975916460/Dashboard1' />
             <param name='tabs' value='no' />
             <param name='toolbar' value='yes' />
-            <param name='static_image' value='https://public.tableau.com/static/images/ta/task2_17316975916460/Dashboard1/1.png' />
+            <param name='static_image'
+                value='https://public.tableau.com/static/images/ta/task2_17316975916460/Dashboard1/1.png' />
             <param name='animate_transition' value='yes' />
             <param name='display_static_image' value='yes' />
             <param name='display_spinner' value='yes' />
@@ -33,11 +31,11 @@
             <param name='language' value='en-US' />
         </object>
     </div>
-    
+
     <script type='text/javascript'>
         var divElement = document.getElementById('viz1731698030275');
         var vizElement = divElement.getElementsByTagName('object')[0];
-    
+
         if (divElement.offsetWidth > 800) {
             vizElement.style.width = '100%';
             vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
@@ -48,10 +46,31 @@
             vizElement.style.width = '100%';
             vizElement.style.height = '877px';
         }
-    
+
         var scriptElement = document.createElement('script');
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+        const now = new Date();
+        const currentHour = now.getHours();
+
+        const startHour = 12;
+        const endHour = 16;
+
+        const dashboardContainer = document.getElementsByClassName("tableauPlaceholder");
+
+        if (currentHour >= startHour && currentHour < endHour) {
+            dashboardContainer.innerHTML = `
+                <iframe src="https://public.tableau.com/views/task2_17316975916460/Task2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                    title="Tableau Dashboard"></iframe>
+            `;
+        } else {
+            dashboardContainer.innerHTML = `
+                <div class="restricted-message" style="text-align:center; color:red; font-weight:bold;">
+                    This dashboard is accessible only between 12 PM to 4 PM.
+                </div>
+            `;
+        }
     </script>
     
 </body>
