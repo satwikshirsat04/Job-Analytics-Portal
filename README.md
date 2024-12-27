@@ -1,6 +1,6 @@
 # Job-Analytics-Portal
 
-Tasks
+Tasks Assigned
 
 1. Draw a chart between Job Portal and Company
 
